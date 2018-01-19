@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "523969125694",
+    "firebase_url": "https://devlight-a60d6.firebaseio.com",
+    "project_id": "devlight-a60d6",
+    "storage_bucket": "devlight-a60d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523969125694:android:cc64f1fe087e9e79",
+        "android_client_info": {
+          "package_name": "com.rishabhrawat.devlight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523969125694-sc6vvcrit0punrdvqnq382thg28hc9t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishabhrawat.devlight",
+            "certificate_hash": "882cf955f00174a4fa8f8490d7bc7393327e04a4"
+          }
+        },
+        {
+          "client_id": "523969125694-p30t2rndmgsdi13qi2jkm6ummhkmg80m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLF570XaBtK1CUyzUJfMtKUmPolGgiUIw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523969125694-p30t2rndmgsdi13qi2jkm6ummhkmg80m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
