@@ -159,7 +159,9 @@
                 android:layout_centerVertical="true"
                 android:background="@color/colorPrimary"
                 android:text="Submit"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:layout_alignParentEnd="true"
+                />
 
         </RelativeLayout>
     </ScrollView>
