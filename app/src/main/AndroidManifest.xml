@@ -25,10 +25,10 @@
             android:name=".Account_Activity.AccountActivity"
             android:label="@string/app_name" />
         <activity
-
-            android:name=".addproject"
+            android:name=".addprojectActivity"
             android:label="Add Project"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+
             >
 
         </activity>

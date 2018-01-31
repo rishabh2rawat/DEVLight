@@ -21,24 +21,23 @@
                 android:id="@+id/project_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:scaleType="center"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
+                android:scaleType="center" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/project_image"
+                android:maxLines="1"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
                 android:textColor="@color/album_title"
-                android:textSize="@dimen/album_title"
-                android:maxLines="1"
-                />
+                android:textSize="@dimen/album_title" />
 
             <TextView
                 android:id="@+id/count"

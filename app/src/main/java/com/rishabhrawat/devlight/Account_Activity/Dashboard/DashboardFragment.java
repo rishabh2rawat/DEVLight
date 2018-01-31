@@ -6,24 +6,17 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.rishabhrawat.devlight.Adapters.dashboard_card_Adapter;
 
 import com.rishabhrawat.devlight.R;
-import com.rishabhrawat.devlight.addproject;
+import com.rishabhrawat.devlight.addprojectActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,7 +32,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 
@@ -116,7 +108,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent =new Intent(getActivity().getBaseContext(),addproject.class);
+                Intent intent =new Intent(getActivity().getBaseContext(),addprojectActivity.class);
                 startActivity(intent);
             }
         });
