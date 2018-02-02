@@ -52,8 +52,6 @@ public class DashboardFragment extends Fragment {
     FloatingActionButton addbtn;
 
 
-
-
     public static DashboardFragment newInstance() {
         DashboardFragment fragment = new DashboardFragment();
 
@@ -65,6 +63,7 @@ public class DashboardFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,13 +101,13 @@ public class DashboardFragment extends Fragment {
 
 
         /*floating action btn */
-        addbtn=(FloatingActionButton) rootview.findViewById(R.id.add_Project);
+        addbtn = (FloatingActionButton) rootview.findViewById(R.id.add_Project);
 
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent =new Intent(getActivity().getBaseContext(),addprojectActivity.class);
+                Intent intent = new Intent(getActivity().getBaseContext(), addprojectActivity.class);
                 startActivity(intent);
             }
         });
@@ -118,33 +117,29 @@ public class DashboardFragment extends Fragment {
 
     //load data from server
 
-    public void load_data_from_server(final String uid)
-    {
+    public void load_data_from_server(final String uid) {
 
-        AsyncTask<String,Void,Void> task=new AsyncTask<String, Void, Void>() {
+        AsyncTask<String, Void, Void> task = new AsyncTask<String, Void, Void>() {
             @Override
             protected Void doInBackground(String... strings) {
 
                 Log.d(TAG, "doInBackground: requesting server");
 
-                OkHttpClient client=new OkHttpClient();
-                okhttp3.Request request= new okhttp3.Request.Builder()
-                        .url("http://devlight.schoolstein.com/dash.php?Authid="+uid)
+                OkHttpClient client = new OkHttpClient();
+                okhttp3.Request request = new okhttp3.Request.Builder()
+                        .url("http://devlight.schoolstein.com/dash.php?Authid=" + uid)
                         .build();
 
 
-
-
                 try {
-                    Response response=client.newCall(request).execute();
+                    Response response = client.newCall(request).execute();
 
-                    JSONArray array=new JSONArray(response.body().string());
+                    JSONArray array = new JSONArray(response.body().string());
 
 
-                    for(int i=0; i<array.length();i++)
-                    {
+                    for (int i = 0; i < array.length(); i++) {
                         JSONObject object = array.getJSONObject(i);
-                        Dashboarddata dashboarddata=new Dashboarddata(object.getInt("id"),object.getString("projectImage"),object.getString("projectHeader"),object.getString("devname"),object.getString("Authid"),object.getInt("count"));
+                        Dashboarddata dashboarddata = new Dashboarddata(object.getInt("id"), object.getString("projectImage"), object.getString("projectHeader"), object.getString("devname"), object.getString("Authid"), object.getInt("count"));
 
                         dashboarddataList.add(dashboarddata);
                     }

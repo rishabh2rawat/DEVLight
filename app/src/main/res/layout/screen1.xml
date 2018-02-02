@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen1"
-    >
+    android:background="@color/screen1">
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView"
@@ -25,17 +25,17 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share what you have Devloped"
+        android:layout_alignParentEnd="true"
 
 
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="32sp"
-
+        android:layout_alignParentTop="true"
         android:layout_marginTop="59dp"
         android:gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+
+        android:text="Share what you have Devloped"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
 
 
 </RelativeLayout>

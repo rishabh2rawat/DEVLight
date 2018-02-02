@@ -3,81 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/gray2"
     tools:context="com.rishabhrawat.devlight.addprojectActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/topbar"
+    <RelativeLayout
+        android:id="@+id/top_rellayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.v7.widget.Toolbar
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/topbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
 
-                <ImageView
-                    android:id="@+id/arrow_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_back" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_toEndOf="@+id/arrow_back"
-                    android:text="@string/add_project"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/arrow_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_back" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@+id/arrow_back"
+                        android:text="@string/add_project"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
 
-            </RelativeLayout>
-        </android.support.v7.widget.Toolbar>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
 
 
-    </android.support.design.widget.AppBarLayout>
+        </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>
 
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/topbar">
+        android:layout_below="@+id/top_rellayout">
 
         <RelativeLayout
             android:id="@+id/parent_rellayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             >
 
             <RelativeLayout
-                android:id="@+id/addimage"
+                android:id="@+id/image_rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white">
 
                 <ImageView
+                    android:id="@+id/add_image"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="20dp"
                     android:elevation="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/add" />
+                    android:src="@drawable/add1" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/editsec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addimage">
+                android:layout_below="@+id/image_rel">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card1"
@@ -95,6 +102,7 @@
                         android:orientation="vertical">
 
                         <android.support.v7.widget.AppCompatTextView
+                            android:layout_marginTop="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Title"
@@ -120,11 +128,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
-                            android:gravity="start"
+                            android:gravity="bottom"
                             android:hint="project description"
                             android:inputType="textMultiLine"
-                            android:lines="6"
-                            android:minLines="2"
+                            android:lines="8"
+                            android:minLines="4"
                             android:scrollbars="vertical" />
 
                         <android.support.v7.widget.AppCompatTextView
@@ -151,19 +159,24 @@
             </RelativeLayout>
 
             <Button
+                android:layout_marginTop="15dp"
                 android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_below="@id/editsec"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
                 android:background="@color/colorPrimary"
                 android:text="Submit"
+                android:layout_marginBottom="0dp"
                 android:textColor="@android:color/white"
-                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
                 />
 
+
         </RelativeLayout>
+
+
     </ScrollView>
 
 

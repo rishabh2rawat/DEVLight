@@ -7,165 +7,153 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:background="@color/gray"
-      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="vertical">
 
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-          <!--top part of profile page-->
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="220dp"
-              android:orientation="vertical"
-              android:background="@drawable/profilegradientbg"
-              >
-              <de.hdodenhof.circleimageview.CircleImageView
-                  android:id="@+id/profile_photo"
-                  android:layout_width="130dp"
-                  android:layout_height="130dp"
-                  android:src="@drawable/harry"
-                  android:layout_gravity="center"
-                  android:layout_margin="5dp"
-                  app:civ_border_width="1.5dp"
-                  app:civ_border_overlay="true"
-                  app:civ_border_color="@android:color/white"
+            <!--top part of profile page-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/profilegradientbg"
+                android:orientation="vertical">
 
-                  />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/harry"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="1.5dp"
 
-              <TextView
-                  android:id="@+id/profile_name"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Harry Potter"
-                  android:layout_gravity="center"
-                  android:textColor="#fff"
-                  android:textSize="21sp"
-                  android:textStyle="bold"
-                  />
-          </LinearLayout>
+                    />
 
-          <android.support.v7.widget.CardView
-              android:layout_width="300dp"
-              android:layout_height="80dp"
-              android:layout_centerHorizontal="true"
-              android:layout_marginTop="175dp"
-              app:cardCornerRadius="10sp"
-              >
-              <include layout="@layout/snippet_center_profilefragment"/>
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Harry Potter"
+                    android:textColor="#fff"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="175dp"
+                app:cardCornerRadius="10sp">
+
+                <include layout="@layout/snippet_center_profilefragment" />
 
 
-          </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
 
-      </RelativeLayout>
+        </RelativeLayout>
 
-      <RelativeLayout
-          android:layout_marginTop="20dp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:layout_marginLeft="50dp"
-              >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="vertical">
 
-                  <ImageView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:src="@drawable/ic_email"
-                      />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                  <TextView
-                      android:id="@+id/profile_email"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="rishabhricharawat@gmail.com"
-                      android:textStyle="bold"
-                      android:layout_gravity="center_vertical"
-                      android:layout_marginLeft="10dp"
-                      />
-              </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_email" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:layout_marginTop="5dp"
-                  >
+                    <TextView
+                        android:id="@+id/profile_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="rishabhricharawat@gmail.com"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                  <ImageView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:src="@drawable/ic_phone"
-                      />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
-                  <TextView
-                      android:id="@+id/profile_phone"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="9557624276"
-                      android:textStyle="bold"
-                      android:layout_gravity="center_vertical"
-                      android:layout_marginLeft="10dp"
-                      />
-              </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_phone" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:layout_marginTop="5dp"
-                  >
+                    <TextView
+                        android:id="@+id/profile_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="9557624276"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                  <ImageView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:src="@drawable/ic_website"
-                      />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
-                  <TextView
-                      android:id="@+id/profile_web"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="http://www.rishabhisin.com"
-                      android:textStyle="bold"
-                      android:layout_gravity="center_vertical"
-                      android:layout_marginLeft="10dp"
-                      />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_website" />
+
+                    <TextView
+                        android:id="@+id/profile_web"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="http://www.rishabhisin.com"
+                        android:textStyle="bold" />
 
 
-              </LinearLayout>
+                </LinearLayout>
 
-          </LinearLayout>
+            </LinearLayout>
 
 
-      </RelativeLayout>
+        </RelativeLayout>
 
-      <Button
-          android:id="@+id/followmebtn"
-          style="@style/TextAppearance.AppCompat.Widget.Button"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:background="@drawable/followmebtn"
-          android:text="Follow me "
-          android:layout_marginTop="10dp"
-          />
+        <Button
+            android:id="@+id/followmebtn"
+            style="@style/TextAppearance.AppCompat.Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/followmebtn"
+            android:text="Follow me " />
 
-  </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>
