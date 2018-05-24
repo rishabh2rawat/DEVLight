@@ -32,8 +32,8 @@ public class dashboard_card_Adapter extends RecyclerView.Adapter<dashboard_card_
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.dashboard_card,parent,false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.dashboard_card, parent, false);
 
 
         return new ViewHolder(v);
@@ -44,14 +44,13 @@ public class dashboard_card_Adapter extends RecyclerView.Adapter<dashboard_card_
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Dashboarddata dashboarddata=dashboarddataList.get(position);
+        Dashboarddata dashboarddata = dashboarddataList.get(position);
 
-        int count=dashboarddata.getCount();
+        int count = dashboarddata.getCount();
 
         Glide.with(mContext).load(dashboarddata.getProjectImage()).into(holder.projectImage);
         holder.projectHeader.setText(dashboarddata.getProjectHeader());
-        holder.projectLikes.setText(Integer.toString(count)+" Likes");
-
+        holder.projectLikes.setText(Integer.toString(count) + " Likes");
 
 
     }
@@ -61,8 +60,7 @@ public class dashboard_card_Adapter extends RecyclerView.Adapter<dashboard_card_
         return dashboarddataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView projectImage;
         TextView projectHeader;
@@ -72,9 +70,9 @@ public class dashboard_card_Adapter extends RecyclerView.Adapter<dashboard_card_
         public ViewHolder(View itemView) {
             super(itemView);
 
-            projectImage=(ImageView) itemView.findViewById(R.id.project_image);
-            projectHeader=(TextView)itemView.findViewById(R.id.title);
-            projectLikes=(TextView) itemView.findViewById(R.id.count);
+            projectImage = (ImageView) itemView.findViewById(R.id.project_image);
+            projectHeader = (TextView) itemView.findViewById(R.id.title);
+            projectLikes = (TextView) itemView.findViewById(R.id.count);
         }
     }
 }

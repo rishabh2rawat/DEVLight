@@ -14,23 +14,20 @@ public class Intromanager {
     SharedPreferences.Editor editor;
     Context context;
 
-    public Intromanager(Context context)
-    {
-        this.context=context;
-        pref=context.getSharedPreferences("first",Context.MODE_PRIVATE);
-        editor=pref.edit();
+    public Intromanager(Context context) {
+        this.context = context;
+        pref = context.getSharedPreferences("first", Context.MODE_PRIVATE);
+        editor = pref.edit();
 
     }
 
-    public void setFirst(boolean isFirst)
-    {
-        editor.putBoolean("check",isFirst);
+    public void setFirst(boolean isFirst) {
+        editor.putBoolean("check", isFirst);
         editor.commit();
     }
 
-    public boolean Check()
-    {
+    public boolean Check() {
 
-        return pref.getBoolean("check",true);
+        return pref.getBoolean("check", true);
     }
 }

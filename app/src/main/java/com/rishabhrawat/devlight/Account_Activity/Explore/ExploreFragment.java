@@ -35,9 +35,9 @@ import static android.R.string.ok;
 
 public class ExploreFragment extends Fragment {
 
-   private List<exploredata> exploredataList;
-   private  explore_card_Adapter adapter;
-   private LinearLayoutManager llm;
+    private List<exploredata> exploredataList;
+    private explore_card_Adapter adapter;
+    private LinearLayoutManager llm;
 
 
     // TODO: Rename and change types and number of parameters
@@ -58,21 +58,21 @@ public class ExploreFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View rootView= inflater.inflate(R.layout.fragment_explore, container, false);
-        RecyclerView rv=(RecyclerView)rootView.findViewById(R.id.Explore_RecyclerView);
+        View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.Explore_RecyclerView);
 
 
         rv.setHasFixedSize(true);
 
-        llm=new LinearLayoutManager(getActivity());
+        llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
 
 
-        exploredataList=new ArrayList<>();
+        exploredataList = new ArrayList<>();
 
         load_data_from_server(0);
 
-        adapter=new explore_card_Adapter(exploredataList,getActivity().getBaseContext());
+        adapter = new explore_card_Adapter(exploredataList, getActivity().getBaseContext());
         rv.setAdapter(adapter);
 
 
@@ -93,39 +93,33 @@ System.out.println("loadin on scroll view item**********************************
         return rootView;
 
 
-
-
-
     }
 
-    private void load_data_from_server(final int id)
-    {
-        AsyncTask <Integer,Void,Void> task=new AsyncTask <Integer,Void,Void>(){
+    private void load_data_from_server(final int id) {
+        AsyncTask<Integer, Void, Void> task = new AsyncTask<Integer, Void, Void>() {
 
 
             @Override
             protected Void doInBackground(Integer... integers) {
 
                 OkHttpClient client = new OkHttpClient();
-                okhttp3.Request request= new okhttp3.Request.Builder()
-                        .url("http://devlight.schoolstein.com/explore.php?id="+id)
+                okhttp3.Request request = new okhttp3.Request.Builder()
+                        .url("http://devlight.schoolstein.com/explore.php?id=" + id)
                         .build();
 
 
                 try {
-                    Response response=client.newCall(request).execute();
+                    Response response = client.newCall(request).execute();
 
-                    JSONArray array=new JSONArray(response.body().string());
+                    JSONArray array = new JSONArray(response.body().string());
 
-                    for(int i=0; i<array.length();i++)
-                    {
+                    for (int i = 0; i < array.length(); i++) {
                         JSONObject object = array.getJSONObject(i);
-                        exploredata exploredata=new exploredata(object.getInt("id"),object.getString("projectImage"),object.getString("projectHeader"),object.getString("projectText"),object.getString("devname"),object.getString("devemail"));
+                        exploredata exploredata = new exploredata(object.getInt("id"), object.getString("projectImage"), object.getString("projectHeader"), object.getString("projectText"), object.getString("devname"), object.getString("devemail"));
 
                         exploredataList.add(exploredata);
 
                     }
-
 
 
                 } catch (Exception e) {

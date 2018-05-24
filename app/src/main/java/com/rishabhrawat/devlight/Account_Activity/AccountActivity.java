@@ -34,31 +34,29 @@ public class AccountActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     //dashboard
-                    selectedfragment= DashboardFragment.newInstance();
+                    selectedfragment = DashboardFragment.newInstance();
                     break;
                 case R.id.navigation_dashboard:
                     //explore
-                    selectedfragment= ExploreFragment.newInstance();
+                    selectedfragment = ExploreFragment.newInstance();
                     break;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_Profile);
                     //profile
-                    selectedfragment= ProfileFragment.newInstance();
+                    selectedfragment = ProfileFragment.newInstance();
                     break;
 
             }
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.content,selectedfragment);
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content, selectedfragment);
             transaction.commit();
             return true;
         }
 
 
-
     };
 
     //manualy dissplaying the first fragment
-
 
 
     @Override
@@ -68,21 +66,20 @@ public class AccountActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_account);
 
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        mAuthListener=new FirebaseAuth.AuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()==null)
-                {
-                    startActivity(new Intent(AccountActivity.this,SignupActivity.class));
+                if (firebaseAuth.getCurrentUser() == null) {
+                    startActivity(new Intent(AccountActivity.this, SignupActivity.class));
                     finish();
                 }
             }
         };
-       //manualy adding a fragment
-        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content,DashboardFragment.newInstance());
+        //manualy adding a fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.content, DashboardFragment.newInstance());
         transaction.commit();
 
 
@@ -91,21 +88,19 @@ public class AccountActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-   // menue item in the top corner
+    // menue item in the top corner
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.options,menu);
+        getMenuInflater().inflate(R.menu.options, menu);
 
         return super.onCreateOptionsMenu(menu);
 
 
-
     }
-  //action for the options button ie logout about and notifiacations
-    public void action(MenuItem mi)
-    {
-        switch(mi.getItemId())
-        {
+
+    //action for the options button ie logout about and notifiacations
+    public void action(MenuItem mi) {
+        switch (mi.getItemId()) {
             case R.id.logout:
                 mAuth.signOut();
 

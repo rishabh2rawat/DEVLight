@@ -34,13 +34,14 @@ import com.rishabhrawat.devlight.R;
 public class SignupActivity extends AppCompatActivity {
 
     private SignInButton mgooglebtn;
-    private static final int RC_SIGN_IN=1;
+    private static final int RC_SIGN_IN = 1;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
-    private static final String TAG="signupActivity";
+    private static final String TAG = "signupActivity";
     private FirebaseAuth.AuthStateListener mAuthListner;
     private ProgressBar mProgressbar;
     private TextView info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,29 +51,28 @@ public class SignupActivity extends AppCompatActivity {
         // layout set
         setContentView(R.layout.activity_signup);
 
-        info=(TextView)findViewById(R.id.textView4);
+        info = (TextView) findViewById(R.id.textView4);
 
-        mProgressbar=(ProgressBar)findViewById(R.id.progressBar2);
+        mProgressbar = (ProgressBar) findViewById(R.id.progressBar2);
         //transparent top statusbar
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                Window window = getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.setStatusBarColor(Color.TRANSPARENT);
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
         //linked google signup button
-        mgooglebtn=(SignInButton)findViewById(R.id.googlebutton);
-        mAuth=FirebaseAuth.getInstance();
+        mgooglebtn = (SignInButton) findViewById(R.id.googlebutton);
+        mAuth = FirebaseAuth.getInstance();
 
-        mAuthListner=new FirebaseAuth.AuthStateListener() {
+        mAuthListner = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-            if (firebaseAuth.getCurrentUser() != null)
-            {
-                Intent intent =new Intent(SignupActivity.this,AccountActivity.class);
-                startActivity(intent);
-                info.setText("Sign Up with google");
-                finish();
-            }
+                if (firebaseAuth.getCurrentUser() != null) {
+                    Intent intent = new Intent(SignupActivity.this, AccountActivity.class);
+                    startActivity(intent);
+                    info.setText("Sign Up with google");
+                    finish();
+                }
             }
         };
 
@@ -82,14 +82,14 @@ public class SignupActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        mGoogleApiClient=new GoogleApiClient.Builder(getApplicationContext())
+        mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
                 .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
                         Toast.makeText(SignupActivity.this, "signup Error", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
         mgooglebtn.setOnClickListener(new View.OnClickListener() {
@@ -104,8 +104,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         mAuth.addAuthStateListener(mAuthListner);
@@ -156,7 +155,7 @@ public class SignupActivity extends AppCompatActivity {
                             mProgressbar.setVisibility(View.INVISIBLE);
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                          //  updateUI(user);
+                            //  updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             info.setText("please try again");
@@ -164,7 +163,7 @@ public class SignupActivity extends AppCompatActivity {
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(SignupActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                           // updateUI(null);
+                            // updateUI(null);
                         }
 
                         // ...

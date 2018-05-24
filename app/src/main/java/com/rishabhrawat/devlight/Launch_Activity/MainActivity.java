@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         addBottomDots(0);
         changeStatusBarColor();
-        viewPagerAdapter=new ViewPagerAdapter();
+        viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewlistner);
         skip.setOnClickListener(new View.OnClickListener() {
@@ -76,20 +76,16 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int current=getItem(+1);
-                        if(current<layouts.length)
-                        {
-                            viewPager.setCurrentItem(current);
-                        }
-                        else
-                        {
-                            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
+                int current = getItem(+1);
+                if (current < layouts.length) {
+                    viewPager.setCurrentItem(current);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
-
 
 
     }
@@ -113,9 +109,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private int getItem(int i)
-    {
-        return viewPager.getCurrentItem() +1;
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + 1;
     }
 
     ViewPager.OnPageChangeListener viewlistner = new ViewPager.OnPageChangeListener() {
@@ -176,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view==object;
+            return view == object;
 
         }
 

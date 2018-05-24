@@ -29,22 +29,22 @@ public class explore_card_Adapter extends RecyclerView.Adapter<explore_card_Adap
     private Context mContext;
 
 
-    public explore_card_Adapter(List<exploredata> exploredatas,Context mContext) {
+    public explore_card_Adapter(List<exploredata> exploredatas, Context mContext) {
         this.exploredatas = exploredatas;
-        this.mContext=mContext;
+        this.mContext = mContext;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.explore_card,parent,false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.explore_card, parent, false);
 
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        exploredata exploredata=exploredatas.get(position);
+        exploredata exploredata = exploredatas.get(position);
 
         Glide.with(mContext).load(exploredata.getProjectImage()).into(holder.projectImage);
         holder.projectHeader.setText(exploredata.getProjectHeader());
@@ -61,8 +61,7 @@ public class explore_card_Adapter extends RecyclerView.Adapter<explore_card_Adap
         return exploredatas.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView projectImage;
         TextView projectHeader;
         TextView projectText;
@@ -71,17 +70,15 @@ public class explore_card_Adapter extends RecyclerView.Adapter<explore_card_Adap
         TextView profile_name;
 
 
-
-
         public ViewHolder(View itemView) {
             super(itemView);
 
-            projectImage=(ImageView) itemView.findViewById(R.id.cardimage);
-            projectHeader=(TextView) itemView.findViewById(R.id.project_header);
-            projectText=(TextView) itemView.findViewById(R.id.project_text);
-            devname=(TextView) itemView.findViewById(R.id.devname);
-            devemail=(TextView) itemView.findViewById(R.id.devemail);
-            profile_name=(TextView) itemView.findViewById(R.id.profile_name);
+            projectImage = (ImageView) itemView.findViewById(R.id.cardimage);
+            projectHeader = (TextView) itemView.findViewById(R.id.project_header);
+            projectText = (TextView) itemView.findViewById(R.id.project_text);
+            devname = (TextView) itemView.findViewById(R.id.devname);
+            devemail = (TextView) itemView.findViewById(R.id.devemail);
+            profile_name = (TextView) itemView.findViewById(R.id.profile_name);
 
 
         }
